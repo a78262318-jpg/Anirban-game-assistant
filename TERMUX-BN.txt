@@ -1,0 +1,23 @@
+ANIRBAN GAME ASSISTANT v1.5 — Termux নির্দেশনা
+
+প্রথমে ZIP Extract করে Termux-এ প্রজেক্ট ফোল্ডারে প্রবেশ করো।
+
+১) Java ও Gradle ইনস্টল:
+pkg update
+pkg install openjdk-17 gradle
+
+২) Build check চালাও:
+bash termux-build.sh
+
+গুরুত্বপূর্ণ:
+এই Android প্রজেক্টে compileSdk 35 দরকার। Java এবং Gradle থাকলেই APK তৈরি হবে না; Android SDK Platform 35 এবং Android Build Tools-ও লাগবে। Termux-এর সাধারণ প্যাকেজে পূর্ণ Android SDK সবসময় পাওয়া যায় না। SDK না থাকলে স্ক্রিপ্ট স্পষ্টভাবে থেমে যাবে—ভুল করে সফল Build বলবে না।
+
+বিকল্প:
+GitHub Actions workflow .github/workflows/build-apk.yml রাখা আছে। Repository-তে প্রজেক্টের সব ফাইল আপলোড করে Actions থেকে Build Android APK চালালে cloud runner-এ Android SDK দিয়ে APK তৈরি করা যায়।
+
+অ্যাপের বাস্তব সীমা:
+- Auto Tap Accessibility Service চালু করলে স্ক্রিনের মাঝখানে tap পাঠায়।
+- Macro Pad শুধু এই অ্যাপের নিজস্ব pad-এ করা tap/drag record করে।
+- Macro স্থায়ীভাবে সংরক্ষণ করে না; অ্যাপ session চলাকালীন থাকে।
+- অন্য গেমের touch record করা বা সব গেমে Macro কাজ করার নিশ্চয়তা নেই।
+- Aim bot নেই।
